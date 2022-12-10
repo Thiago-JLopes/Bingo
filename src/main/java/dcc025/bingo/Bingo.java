@@ -18,7 +18,7 @@ public class Bingo {
         String modoJogo;
         
         System.out.println("------------------------------------------------------------------------");
-        System.out.println("                            B  I  N  G  O");
+        System.out.println("                       B     I     N     G     O");
         System.out.println("------------------------------------------------------------------------");
         System.out.println("Bem Vindo ao Bingo!");
         
@@ -29,6 +29,13 @@ public class Bingo {
         System.out.println("Digite o modo de jogo:");
         System.out.println("1 - Linha\n2 - Cruz");
         modoJogo = teclado.next();
-        System.out.println("_____________________________"); 
+        System.out.println("_____________________________");
+        
+        Cartela newCartela = new Cartela(numJogadores, modoJogo);
+        newCartela.preecherCartela();
+        newCartela.imprime();
+        newCartela.ganhador(4);
+        newCartela.imprime();
+        
     }
 }
