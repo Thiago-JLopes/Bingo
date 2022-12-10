@@ -4,6 +4,8 @@
  */
 package dcc025.bingo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -12,19 +14,26 @@ import java.util.Random;
  */
 public class GeradorNumero {
 
-    private static int min;
-    private static int max;
+    private int min;
+    private int max;
+    private static List<Integer> numSorteado;
     private static Random numAleatorio;
 
     public GeradorNumero() {
         numAleatorio = new Random();
+        numSorteado = new ArrayList<>();
     }
 
     public int aleatorio(int min, int max) {
         this.min = min;
         this.max = max;
+        int val = numAleatorio.nextInt(this.min, this.max);
 
-        return numAleatorio.nextInt(this.min, this.max);
+        if (numSorteado.contains(val)) {
+            return aleatorio(this.min, this.max);
+        }
+        numSorteado.add(val);
+        return val;
     }
 
 }
