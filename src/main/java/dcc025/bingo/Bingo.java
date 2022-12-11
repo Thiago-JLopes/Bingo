@@ -32,10 +32,11 @@ public class Bingo {
         System.out.println("_____________________________");
         
         Cartela newCartela = new Cartela(numJogadores, modoJogo);
-        newCartela.preecherCartela();
-        newCartela.imprime();
-        newCartela.ganhador(4);
-        newCartela.imprime();
+        newCartela.criarCartelas();
+        newCartela.marcaCartelas(5);
+        //newCartela.imprime();
+        //newCartela.ganhador(4);
+       // newCartela.imprime();
         
     }
 }
