@@ -16,11 +16,10 @@ public class GeradorNumero {
 
     private int min;
     private int max;
-    private static List<Integer> numSorteado;
-    private static Random numAleatorio;
+    private static List<Integer> numSorteado;//lista para verificar se o número ja está na cartela.;
+    private static final Random numAleatorio = new Random();
 
     public GeradorNumero() {
-        numAleatorio = new Random();
         numSorteado = new ArrayList<>();
     }
 
